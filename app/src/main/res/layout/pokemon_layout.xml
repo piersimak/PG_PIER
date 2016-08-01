@@ -14,6 +14,7 @@
             android:layout_weight="1"
             android:background="@drawable/selector"
             android:text="SORT"
+            android:id="@+id/btnSort"
             android:layout_height="wrap_content" />
         <Button
             android:layout_width="0dp"
@@ -22,6 +23,32 @@
             android:text="SEARCH"
             android:layout_height="wrap_content" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/ButtonGroupSort"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="match_parent"
+            android:background="@drawable/selector"
+            android:text="Combat Power"
+            android:id="@+id/btnSortByCP"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="match_parent"
+            android:background="@drawable/selector"
+            android:text="Name"
+            android:id="@+id/btnSortByName"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="match_parent"
+            android:background="@drawable/selector"
+            android:text="Number"
+            android:id="@+id/btnSortByNumber"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/recyclerViewPokemon"

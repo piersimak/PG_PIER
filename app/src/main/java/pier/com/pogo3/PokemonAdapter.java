@@ -78,6 +78,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         Picasso.with(context).load(url).into(pokemonViewHolder.gambarPokemon);
         pokemonViewHolder.txtnama.setText(pokemonModel.getPokemonId().name());
         pokemonViewHolder.txtcp.setText(pokemonModel.getCp()+" CP");
+        pokemonViewHolder.txtnumber.setText("#"+String.valueOf(pokemonModel.getPokemonId().getNumber()));
     }
 
 
@@ -96,6 +97,8 @@ public class PokemonAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         @Bind(R.id.txtnama)
         TextView txtnama;
         @Bind(R.id.txtcp)
+        TextView txtnumber;
+        @Bind(R.id.txtnumber)
         TextView txtcp;
         public PokemonViewHolder(View itemView) {
             super(itemView);
