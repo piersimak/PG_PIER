@@ -66,7 +66,7 @@ public class SplashScreen extends AppCompatActivity {
             //this method runs on the Main thread. Therefore you can create your spinner
             StaticFunction.pokemonGo = pokemonGo;
             if(pokemonGo!=null)
-            new DBQueryTask2().execute();
+            go();
             else new DBQueryTask().execute();
         }
     }

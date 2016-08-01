@@ -1,6 +1,7 @@
 package pier.com.pogo3;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
@@ -191,6 +192,8 @@ public class MainActivity extends Activity {
                 Button btnSortName = (Button) viewGenerate.findViewById(R.id.btnSortByName);
                 Button btnSortCP = (Button) viewGenerate.findViewById(R.id.btnSortByCP);
                 Button btnSortNumber = (Button) viewGenerate.findViewById(R.id.btnSortByNumber);
+                Button btnSearch = (Button) viewGenerate.findViewById(R.id.btnSearch);
+                btnSearch.setText(StaticFunction.pokemonGo.getInventories().getPokebank().getPokemons().size()+"/"+StaticFunction.pokemonGo.getPlayerProfile().getPokemonStorage());
                 btnSortName.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -223,7 +226,11 @@ public class MainActivity extends Activity {
                         new RecyclerItemClickListener(MainActivity.this, new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
                             public void onItemClick(View view, int position) {
-
+                                Intent i = new Intent(MainActivity.this,PokemonDetails.class);
+                                Bundle b = new Bundle();
+                                b.putLong("pokemonid",StaticFunction.pokemonGo.getInventories().getPokebank().getPokemons().get(position).getId());
+                                i.putExtras(b);
+                                startActivity(i);
                             }
                         })
                 );
